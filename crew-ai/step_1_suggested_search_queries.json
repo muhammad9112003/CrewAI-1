@@ -1,0 +1,5 @@
+{
+  "queries": [
+    "site:www.amazon.eg table -site:www.amazon.eg/blog best price"
+  ]
+}

@@ -1,0 +1,359 @@
+[
+    {
+        "label": "Agent",
+        "importPath": "crewai",
+        "description": "crewai",
+        "isExtraImport": true,
+        "detail": "crewai",
+        "documentation": {}
+    },
+    {
+        "label": "Task",
+        "importPath": "crewai",
+        "description": "crewai",
+        "isExtraImport": true,
+        "detail": "crewai",
+        "documentation": {}
+    },
+    {
+        "label": "Crew",
+        "importPath": "crewai",
+        "description": "crewai",
+        "isExtraImport": true,
+        "detail": "crewai",
+        "documentation": {}
+    },
+    {
+        "label": "Process",
+        "importPath": "crewai",
+        "description": "crewai",
+        "isExtraImport": true,
+        "detail": "crewai",
+        "documentation": {}
+    },
+    {
+        "label": "LLM",
+        "importPath": "crewai",
+        "description": "crewai",
+        "isExtraImport": true,
+        "detail": "crewai",
+        "documentation": {}
+    },
+    {
+        "label": "agentops",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "agentops",
+        "description": "agentops",
+        "detail": "agentops",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "Field",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "TavilyClient",
+        "importPath": "tavily",
+        "description": "tavily",
+        "isExtraImport": true,
+        "detail": "tavily",
+        "documentation": {}
+    },
+    {
+        "label": "tool",
+        "importPath": "crewai.tools",
+        "description": "crewai.tools",
+        "isExtraImport": true,
+        "detail": "crewai.tools",
+        "documentation": {}
+    },
+    {
+        "label": "Client",
+        "importPath": "scrapegraph_py",
+        "description": "scrapegraph_py",
+        "isExtraImport": true,
+        "detail": "scrapegraph_py",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "StringKnowledgeSource",
+        "importPath": "crewai.knowledge.source.string_knowledge_source",
+        "description": "crewai.knowledge.source.string_knowledge_source",
+        "isExtraImport": true,
+        "detail": "crewai.knowledge.source.string_knowledge_source",
+        "documentation": {}
+    },
+    {
+        "label": "Suggested_Search_Queries",
+        "kind": 6,
+        "importPath": "Main",
+        "description": "Main",
+        "peekOfCode": "class Suggested_Search_Queries(BaseModel):\n    queries: List[str] = Field(..., title=\"Suggested Search Queries\", min_items=1, max_items=no_keywords)\n# ///////////////////////////////////////////////////////////////////////////////////////////////////////\n# start create agent A\nSearch_Queries_Recommendation_Agent = Agent(\n    role=\"Search Queries Recommendation Agent\",\n    goal=\"\\n\".join([\n        \"To provide a list of suggested search queries to be passed to the search engine.\",\n        \"The queries must be varied and looking for specific items.\"\n    ]),",
+        "detail": "Main",
+        "documentation": {}
+    },
+    {
+        "label": "SignleSearchResult",
+        "kind": 6,
+        "importPath": "Main",
+        "description": "Main",
+        "peekOfCode": "class SignleSearchResult(BaseModel):\n    title: str\n    url: str = Field(..., title=\"the page url\")\n    content: str\n    score: float\n    search_query: str\nclass AllSearchResults(BaseModel):\n    results: List[SignleSearchResult]\nSearch_Engine_Agent = Agent(\n    role=\"Search Engine Agent\",",
+        "detail": "Main",
+        "documentation": {}
+    },
+    {
+        "label": "AllSearchResults",
+        "kind": 6,
+        "importPath": "Main",
+        "description": "Main",
+        "peekOfCode": "class AllSearchResults(BaseModel):\n    results: List[SignleSearchResult]\nSearch_Engine_Agent = Agent(\n    role=\"Search Engine Agent\",\n    goal=\"To search for products based on the suggested search query\",\n    backstory=\"The agent is designed to help in looking for products by searching for products based on the suggested search queries.\",\n    llm=basicLLM,\n    verbose=True,\n    tools=[Search_Engine_Tool],\n)",
+        "detail": "Main",
+        "documentation": {}
+    },
+    {
+        "label": "ProductSpec",
+        "kind": 6,
+        "importPath": "Main",
+        "description": "Main",
+        "peekOfCode": "class ProductSpec(BaseModel):\n    specification_name: str\n    specification_value: str\n# the class for each product\nclass SingleExtractedProduct(BaseModel):\n    page_url: str = Field(..., title=\"The original url of the product page\")\n    product_title: str = Field(..., title=\"The title of the product\")\n    product_image_url: str = Field(..., title=\"The url of the product image\")\n    product_url: str = Field(..., title=\"The url of the product\")\n    product_current_price: float = Field(..., title=\"The current price of the product\")",
+        "detail": "Main",
+        "documentation": {}
+    },
+    {
+        "label": "SingleExtractedProduct",
+        "kind": 6,
+        "importPath": "Main",
+        "description": "Main",
+        "peekOfCode": "class SingleExtractedProduct(BaseModel):\n    page_url: str = Field(..., title=\"The original url of the product page\")\n    product_title: str = Field(..., title=\"The title of the product\")\n    product_image_url: str = Field(..., title=\"The url of the product image\")\n    product_url: str = Field(..., title=\"The url of the product\")\n    product_current_price: float = Field(..., title=\"The current price of the product\")\n    product_original_price: float = Field(\n        title=\"The original price of the product before discount. Set to None if no discount\",\n        default=None,\n    )",
+        "detail": "Main",
+        "documentation": {}
+    },
+    {
+        "label": "AllExtractedProducts",
+        "kind": 6,
+        "importPath": "Main",
+        "description": "Main",
+        "peekOfCode": "class AllExtractedProducts(BaseModel):\n    products: List[SingleExtractedProduct]\n#  declaraton tool\n@tool\ndef web_scraping_tool(page_url: str):\n    \"\"\"\n    An AI Tool to help an agent to scrape a web page\n    Example:\n    web_scraping_tool(\n        page_url=\"https://www.noon.com/egypt-en/15-bar-fully-automatic-espresso-machine-1-8-l-1500\"",
+        "detail": "Main",
+        "documentation": {}
+    },
+    {
+        "label": "Search_Engine_Tool",
+        "kind": 2,
+        "importPath": "Main",
+        "description": "Main",
+        "peekOfCode": "def Search_Engine_Tool(query: str):\n    \"\"\"useful for search-based queries . use this to find current information about any query related pages using search engine\"\"\"\n    return search_client.search(query)\nclass SignleSearchResult(BaseModel):\n    title: str\n    url: str = Field(..., title=\"the page url\")\n    content: str\n    score: float\n    search_query: str\nclass AllSearchResults(BaseModel):",
+        "detail": "Main",
+        "documentation": {}
+    },
+    {
+        "label": "web_scraping_tool",
+        "kind": 2,
+        "importPath": "Main",
+        "description": "Main",
+        "peekOfCode": "def web_scraping_tool(page_url: str):\n    \"\"\"\n    An AI Tool to help an agent to scrape a web page\n    Example:\n    web_scraping_tool(\n        page_url=\"https://www.noon.com/egypt-en/15-bar-fully-automatic-espresso-machine-1-8-l-1500\"\n    )\n    \"\"\"\n    details = scrape_client.smartscraper(\n        website_url=page_url,",
+        "detail": "Main",
+        "documentation": {}
+    },
+    {
+        "label": "no_keywords",
+        "kind": 5,
+        "importPath": "Main",
+        "description": "Main",
+        "peekOfCode": "no_keywords = 1\nsearch_client = TavilyClient(api_key=\"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\")\nscrape_client = Client(api_key=\"sgai-ee4939b1-9e5d-4e00-bda6-d87d724dc2f2\")\nabout_company = \"Rankyx is a company that provides AI solutions to help websites refine their search and recommendation systems.\"\ncompany_context = StringKnowledgeSource(content=about_company)\n# API KEYS\nos.environ[\"MISTRAL_API_KEY\"] = \"cJgIydUto15kD2r5J5ESuknlDXQ9WnjU\"\nos.environ[\"AGENTOPS_API_KEY\"] = \"9761238a-3851-43eb-976d-fa790cf86e3b\"\n# initialize  Agent ops\nagentops.init (",
+        "detail": "Main",
+        "documentation": {}
+    },
+    {
+        "label": "search_client",
+        "kind": 5,
+        "importPath": "Main",
+        "description": "Main",
+        "peekOfCode": "search_client = TavilyClient(api_key=\"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\")\nscrape_client = Client(api_key=\"sgai-ee4939b1-9e5d-4e00-bda6-d87d724dc2f2\")\nabout_company = \"Rankyx is a company that provides AI solutions to help websites refine their search and recommendation systems.\"\ncompany_context = StringKnowledgeSource(content=about_company)\n# API KEYS\nos.environ[\"MISTRAL_API_KEY\"] = \"cJgIydUto15kD2r5J5ESuknlDXQ9WnjU\"\nos.environ[\"AGENTOPS_API_KEY\"] = \"9761238a-3851-43eb-976d-fa790cf86e3b\"\n# initialize  Agent ops\nagentops.init (\n    api_key =\"9761238a-3851-43eb-976d-fa790cf86e3b\",",
+        "detail": "Main",
+        "documentation": {}
+    },
+    {
+        "label": "scrape_client",
+        "kind": 5,
+        "importPath": "Main",
+        "description": "Main",
+        "peekOfCode": "scrape_client = Client(api_key=\"sgai-ee4939b1-9e5d-4e00-bda6-d87d724dc2f2\")\nabout_company = \"Rankyx is a company that provides AI solutions to help websites refine their search and recommendation systems.\"\ncompany_context = StringKnowledgeSource(content=about_company)\n# API KEYS\nos.environ[\"MISTRAL_API_KEY\"] = \"cJgIydUto15kD2r5J5ESuknlDXQ9WnjU\"\nos.environ[\"AGENTOPS_API_KEY\"] = \"9761238a-3851-43eb-976d-fa790cf86e3b\"\n# initialize  Agent ops\nagentops.init (\n    api_key =\"9761238a-3851-43eb-976d-fa790cf86e3b\",\n    skip_auto_end_session=True",
+        "detail": "Main",
+        "documentation": {}
+    },
+    {
+        "label": "about_company",
+        "kind": 5,
+        "importPath": "Main",
+        "description": "Main",
+        "peekOfCode": "about_company = \"Rankyx is a company that provides AI solutions to help websites refine their search and recommendation systems.\"\ncompany_context = StringKnowledgeSource(content=about_company)\n# API KEYS\nos.environ[\"MISTRAL_API_KEY\"] = \"cJgIydUto15kD2r5J5ESuknlDXQ9WnjU\"\nos.environ[\"AGENTOPS_API_KEY\"] = \"9761238a-3851-43eb-976d-fa790cf86e3b\"\n# initialize  Agent ops\nagentops.init (\n    api_key =\"9761238a-3851-43eb-976d-fa790cf86e3b\",\n    skip_auto_end_session=True\n)",
+        "detail": "Main",
+        "documentation": {}
+    },
+    {
+        "label": "company_context",
+        "kind": 5,
+        "importPath": "Main",
+        "description": "Main",
+        "peekOfCode": "company_context = StringKnowledgeSource(content=about_company)\n# API KEYS\nos.environ[\"MISTRAL_API_KEY\"] = \"cJgIydUto15kD2r5J5ESuknlDXQ9WnjU\"\nos.environ[\"AGENTOPS_API_KEY\"] = \"9761238a-3851-43eb-976d-fa790cf86e3b\"\n# initialize  Agent ops\nagentops.init (\n    api_key =\"9761238a-3851-43eb-976d-fa790cf86e3b\",\n    skip_auto_end_session=True\n)\n# make Directory",
+        "detail": "Main",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ[\"MISTRAL_API_KEY\"]",
+        "kind": 5,
+        "importPath": "Main",
+        "description": "Main",
+        "peekOfCode": "os.environ[\"MISTRAL_API_KEY\"] = \"cJgIydUto15kD2r5J5ESuknlDXQ9WnjU\"\nos.environ[\"AGENTOPS_API_KEY\"] = \"9761238a-3851-43eb-976d-fa790cf86e3b\"\n# initialize  Agent ops\nagentops.init (\n    api_key =\"9761238a-3851-43eb-976d-fa790cf86e3b\",\n    skip_auto_end_session=True\n)\n# make Directory\noutput_dir = './crew-ai'\nos.makedirs(output_dir, exist_ok=True)",
+        "detail": "Main",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ[\"AGENTOPS_API_KEY\"]",
+        "kind": 5,
+        "importPath": "Main",
+        "description": "Main",
+        "peekOfCode": "os.environ[\"AGENTOPS_API_KEY\"] = \"9761238a-3851-43eb-976d-fa790cf86e3b\"\n# initialize  Agent ops\nagentops.init (\n    api_key =\"9761238a-3851-43eb-976d-fa790cf86e3b\",\n    skip_auto_end_session=True\n)\n# make Directory\noutput_dir = './crew-ai'\nos.makedirs(output_dir, exist_ok=True)\n# Large Language Model \"openai\"",
+        "detail": "Main",
+        "documentation": {}
+    },
+    {
+        "label": "output_dir",
+        "kind": 5,
+        "importPath": "Main",
+        "description": "Main",
+        "peekOfCode": "output_dir = './crew-ai'\nos.makedirs(output_dir, exist_ok=True)\n# Large Language Model \"openai\"\nbasicLLM  = LLM(\n    model=\"mistral/mistral-large-latest\",\n    temperature=0.7\n)\n# output json\nclass Suggested_Search_Queries(BaseModel):\n    queries: List[str] = Field(..., title=\"Suggested Search Queries\", min_items=1, max_items=no_keywords)",
+        "detail": "Main",
+        "documentation": {}
+    },
+    {
+        "label": "Search_Queries_Recommendation_Agent",
+        "kind": 5,
+        "importPath": "Main",
+        "description": "Main",
+        "peekOfCode": "Search_Queries_Recommendation_Agent = Agent(\n    role=\"Search Queries Recommendation Agent\",\n    goal=\"\\n\".join([\n        \"To provide a list of suggested search queries to be passed to the search engine.\",\n        \"The queries must be varied and looking for specific items.\"\n    ]),\n    backstory=\"An expert in search optimization, generating precise and varied queries to enhance search accuracy.\",\n    llm=basicLLM,\n    verbose=True\n)",
+        "detail": "Main",
+        "documentation": {}
+    },
+    {
+        "label": "search_queries_recommendation_task",
+        "kind": 5,
+        "importPath": "Main",
+        "description": "Main",
+        "peekOfCode": "search_queries_recommendation_task = Task(\n    description=\"\\n\".join(\n        [\n            \"Rankyx is looking to buy {product_name} at the best prices (value for a price strategy)\",\n            \"The company target any of these websites to buy from: {websites_list}\",\n            \"The company wants to reach all available products on the internet to be compared later in another stage.\",\n            \"The stores must sell the product in {country_name}\",\n            \"Generate at maximum {no_keywords} queries.\",\n            \"The search query must reach an ecommerce webpage for product, and not a blog or listing page.\",\n        ]",
+        "detail": "Main",
+        "documentation": {}
+    },
+    {
+        "label": "Search_Engine_Agent",
+        "kind": 5,
+        "importPath": "Main",
+        "description": "Main",
+        "peekOfCode": "Search_Engine_Agent = Agent(\n    role=\"Search Engine Agent\",\n    goal=\"To search for products based on the suggested search query\",\n    backstory=\"The agent is designed to help in looking for products by searching for products based on the suggested search queries.\",\n    llm=basicLLM,\n    verbose=True,\n    tools=[Search_Engine_Tool],\n)\nSearch_Engine_Task = Task(\n    description=\"\\n\".join(",
+        "detail": "Main",
+        "documentation": {}
+    },
+    {
+        "label": "Search_Engine_Task",
+        "kind": 5,
+        "importPath": "Main",
+        "description": "Main",
+        "peekOfCode": "Search_Engine_Task = Task(\n    description=\"\\n\".join(\n        [\n            \"The task is to search for products based on the suggested search queries.\",\n            \"You have to collect results from multiple search queries.\",\n            \"Ignore any susbicious links or not an ecommerce single product website link.\",\n            \"Ignore any search results with confidence score less than ({score_th}) .\",\n            \"The search results will be used to compare prices of products from different websites.\",\n            \"give me {no_keywords} products only\",\n        ]",
+        "detail": "Main",
+        "documentation": {}
+    },
+    {
+        "label": "Scraping_Agent",
+        "kind": 5,
+        "importPath": "Main",
+        "description": "Main",
+        "peekOfCode": "Scraping_Agent = Agent(\n    role=\"Web scraping agent\",\n    goal=\"To extract details from any website\",\n    backstory=\"The agent is designed to help in looking for required values from any website url. These details will be used to decide which best product to buy.\",\n    llm=basicLLM,\n    tools=[web_scraping_tool],\n    verbose=True,\n)\n# Task of Agent c\nScraping_Task = Task(",
+        "detail": "Main",
+        "documentation": {}
+    },
+    {
+        "label": "Scraping_Task",
+        "kind": 5,
+        "importPath": "Main",
+        "description": "Main",
+        "peekOfCode": "Scraping_Task = Task(\n    description=\"\\n\".join(\n        [\n            \"The task is to extract product details from any ecommerce store page url.\",\n            \"The task has to collect results from multiple pages urls.\",\n            \"Collect the best {top_recommendations_no} products from the search results.\",\n        ]\n    ),\n    expected_output=\"A JSON object containing products details\",\n    output_json=AllExtractedProducts,",
+        "detail": "Main",
+        "documentation": {}
+    },
+    {
+        "label": "Procurement_Report_Author_Agent",
+        "kind": 5,
+        "importPath": "Main",
+        "description": "Main",
+        "peekOfCode": "Procurement_Report_Author_Agent = Agent(\n    role=\"Procurement Report Author Agent\",\n    goal=\"To generate a professional HTML page for the procurement report\",\n    backstory=\"The agent is designed to assist in generating a professional HTML page for the procurement report after looking into a list of products.\",\n    llm=basicLLM,\n    verbose=True,\n)\n# Task for Agent D\nProcurement_Report_Author_Task = Task(\n    description=\"\\n\".join(",
+        "detail": "Main",
+        "documentation": {}
+    },
+    {
+        "label": "Procurement_Report_Author_Task",
+        "kind": 5,
+        "importPath": "Main",
+        "description": "Main",
+        "peekOfCode": "Procurement_Report_Author_Task = Task(\n    description=\"\\n\".join(\n        [\n            \"The task is to generate a professional HTML page for the procurement report.\",\n            \"You have to use Bootstrap CSS framework for a better UI.\",\n            \"Use the provided context about the company to make a specialized report.\",\n            \"The report will include the search results and prices of products from different websites.\",\n            \"The report should be structured with the following sections:\",\n            \"1. Executive Summary: A brief overview of the procurement process and key findings.\",\n            \"2. Introduction: An introduction to the purpose and scope of the report.\",",
+        "detail": "Main",
+        "documentation": {}
+    },
+    {
+        "label": "Rankyx_crew",
+        "kind": 5,
+        "importPath": "Main",
+        "description": "Main",
+        "peekOfCode": "Rankyx_crew = Crew(\n    agents=[\n        Search_Queries_Recommendation_Agent,\n        Search_Engine_Agent,\n        Scraping_Agent,\n        Procurement_Report_Author_Agent,\n    ],\n    tasks=[\n        search_queries_recommendation_task,\n        Search_Engine_Task,",
+        "detail": "Main",
+        "documentation": {}
+    },
+    {
+        "label": "crew_results",
+        "kind": 5,
+        "importPath": "Main",
+        "description": "Main",
+        "peekOfCode": "crew_results = Rankyx_crew.kickoff(\n    inputs={\n        \"product_name\": \"table\",\n        \"websites_list\": [\"www.amazon.eg\", \"www.jumia.com.eg\", \"www.noon.com/egypt-en\"],\n        \"country_name\": \"Egypt\",\n        \"no_keywords\": 2,\n        \"score_th\":0.1,\n        \"top_recommendations_no\" : 2\n    }\n)",
+        "detail": "Main",
+        "documentation": {}
+    }
+]

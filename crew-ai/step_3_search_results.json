@@ -1,0 +1,106 @@
+{
+  "products": [
+    {
+      "page_url": "https://www.amazon.eg/-/en/b?ie=UTF8&node=21864135031",
+      "product_title": "Artistico Dining Table Multi Color - 150cm, Wooden Table with 4 Foldable Chairs, Your Subscribe & Save",
+      "product_image_url": "https://m.media-amazon.com/images/I/31XVKUM2HkS._SR145,145_.jpg",
+      "product_url": "https://www.amazon.eg/-/en/Artistico-Dining-Table-Multi-Color/dp/B09237HRXD?pd%5Frd%5Fw=XJ0Yo&content-id=amzn1.sym.36cee65f-e073-4f26-9f36-43a91ab24eb8&pf%5Frd%5Fp=36cee65f-e073-4f26-9f36-43a91ab24eb8&pf%5Frd%5Fr=5MN4K1ARPMJ4T28T87MN&pd%5Frd%5Fwg=9ypYG&pd%5Frd%5Fr=1608e6e2-84cf-4989-be2d-6136bda60e78&pd%5Frd%5Fi=B09237HRXD&ref%5F=Oct%5Fd%5Fobs%5FB09237HRXD, https://www.amazon.eg/-/en/Wooden-Table-4-Foldable-Chairs/dp/B09K2K9MZV?pd%5Frd%5Fw=gGFUf&content-id=amzn1.sym.888ce3e3-affe-4426-b8ee-8c5aceed3292&pf%5Frd%5Fp=888ce3e3-affe-4426-b8ee-8c5aceed3292&pf%5Frd%5Fr=5MN4K1ARPMJ4T28T87MN&pd%5Frd%5Fwg=9ypYG&pd%5Frd%5Fr=1608e6e2-84cf-4989-be2d-6136bda60e78&pd%5Frd%5Fi=B09K2K9MZV&ref%5F=Oct%5Fd%5Fomwf%5FB09K2K9MZV, https://www.amazon.eg/-/en/gp/subscribe-and-save/manage?ref_=navm_sns",
+      "product_current_price": 3295.0,
+      "product_original_price": 3763.0,
+      "product_discount_percentage": 12.4,
+      "product_specs": [
+        {
+          "specification_name": "Color",
+          "specification_value": "Multi Color"
+        },
+        {
+          "specification_name": "Size",
+          "specification_value": "150cm"
+        },
+        {
+          "specification_name": "Material",
+          "specification_value": "Wood"
+        },
+        {
+          "specification_name": "Number of Chairs",
+          "specification_value": "4"
+        },
+        {
+          "specification_name": "Foldable",
+          "specification_value": "Yes"
+        }
+      ],
+      "agent_recommendation_rank": 5,
+      "agent_recommendation_notes": [
+        "Highly recommended for its versatility and modern design.",
+        "Great for small to medium-sized dining areas.",
+        "High-quality wood construction",
+        "Foldable design for easy storage",
+        "Includes 4 chairs"
+      ]
+    },
+    {
+      "page_url": "https://www.amazon.eg/-/en/Artistico-Dining-Table-Multi-Color/dp/B09237HRXD",
+      "product_title": "Artistico Dining Table Multi Color - 150cm",
+      "product_image_url": "https://m.media-amazon.com/images/I/515vvqsUB-S._AC_UF894,1000_QL80_.jpg",
+      "product_url": "https://www.amazon.eg/-/en/Artistico-Dining-Table-Multi-Color/dp/B09237HRXD",
+      "product_current_price": 3295.0,
+      "product_original_price": 3763.0,
+      "product_discount_percentage": 12.0,
+      "product_specs": [
+        {
+          "specification_name": "Item Dimensions",
+          "specification_value": "90D x 150W x 75H centimeters"
+        },
+        {
+          "specification_name": "Item Weight",
+          "specification_value": "25 Kilograms"
+        },
+        {
+          "specification_name": "Seating Capacity",
+          "specification_value": "6"
+        },
+        {
+          "specification_name": "Tabletop Thickness",
+          "specification_value": "18 Millimeters"
+        },
+        {
+          "specification_name": "Maximum Lifting Height",
+          "specification_value": "75 Centimeters"
+        }
+      ],
+      "agent_recommendation_rank": 5,
+      "agent_recommendation_notes": [
+        "High-quality dining table with a modern design.",
+        "Affordable price with a significant discount.",
+        "Good seating capacity for family gatherings.",
+        "Easy to assemble and maintain.",
+        "Positive customer reviews and ratings."
+      ]
+    },
+    {
+      "page_url": "https://www.jumia.com.eg/mlp-k-laptop-table/",
+      "product_title": "Foldable Laptop Table And Bed",
+      "product_image_url": "https://www.jumia.com.eg/generic-foldable-laptop-table-and-bed-124213217.html",
+      "product_url": "https://www.jumia.com.eg/generic-foldable-laptop-table-and-bed-124213217.html",
+      "product_current_price": 247.5,
+      "product_original_price": 450.0,
+      "product_discount_percentage": 45.0,
+      "product_specs": [
+        {
+          "specification_name": "Color",
+          "specification_value": "May Vary"
+        },
+        {
+          "specification_name": "Dimensions",
+          "specification_value": "40.5 X 60 X 5.5 Cm"
+        }
+      ],
+      "agent_recommendation_rank": 5,
+      "agent_recommendation_notes": [
+        "Great for portability and versatility.",
+        "Affordable price with good discount."
+      ]
+    }
+  ]
+}
